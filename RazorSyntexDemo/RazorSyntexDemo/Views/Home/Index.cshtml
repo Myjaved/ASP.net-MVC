@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<!--<h2>MY OFFICIAL WEBSITE</h2>-->
+<!--Inline Expression Statement-->
+
+<!--<p> TODAY DATE AND TIME IS : @DateTime.Now</p>
+<p>THIS YEAR IS : @DateTime.Now.Year</p>-->
+
+<!--Declaring Variables -->
+<!--@{
+    string name = "Welcome to ASP.net MVC Learning path";
+    var TodaysTime = DateTime.Now.ToLongTimeString();
+
+ }
+<h2>Channel name is :@name</h2>
+<h2>Todays Time is :@TodaysTime</h2>-->
+
+<!-- CONDITIONAL STATEMENT-->
+@*@{
+        int marks = 75;
+        if (marks >= 80)
+        {
+            <h2>YOUR GRADE IS A-1</h2>
+        }
+        else
+        {
+            <h2>YOUR GRADE IS A</h2>
+        }
+    }*@
+
+@*@{
+    string fruit = "Apple";
+    switch (fruit)
+    {
+        case "Banana":
+            <h2> YOU HAVE SELECTED BANANA</h2>
+            break;
+
+        case "Strawberry":
+            <h2> YOU HAVE SELECTED STRAWBERRY</h2>
+            break;
+
+        case "Mango":
+            <h2> YOU HAVE SELECTED MANGO</h2>
+            break;
+
+        case "Apple":
+            <h2> YOU HAVE SELECTED APPLE</h2>
+                break;
+        default:
+            <h2>INVALID FRUIT</h2>
+            break;
+
+
+    }
+
+    }*@
+
+@*@{ 
+
+    for (int i = 1; i < 10; i++)
+    {
+        <h2>@i</h2>
+    }
+}*@
+
+@*@{ 
+    string[] sports = { "Football", "Cricket", "Hockey", "Carrom" };
+
+    foreach (var item in sports)
+    {
+        <h2>@item</h2>
+    }
+}*@
+
+
+
+
+
+

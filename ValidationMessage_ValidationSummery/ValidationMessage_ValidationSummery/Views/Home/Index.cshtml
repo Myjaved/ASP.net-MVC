@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<p>@Html.ValidationSummary()</p>
+
+@using (Html.BeginForm())
+{
+    <p>Enter Name @Html.TextBox("fullname")</p>
+    @ViewData["fullnameError"]
+    @*@Html.ValidationMessage("fullname", new {@class="text-danger"})*@
+
+    <p>Enter Age @Html.TextBox("Age")</p>
+    @ViewData["AgeError"]
+    @*@Html.ValidationMessage("Age", new { @class = "text-danger" })*@
+    <p>Enter Email @Html.TextBox("Email")</p>
+    @ViewData["EmailError"]
+    @*@Html.ValidationMessage("Email", new { @class = "text-danger" })*@
+    <br />
+    <br />
+    <input type="submit" value="Submit" class="btn btn-info" />
+    @Html.Raw(ViewData["SuccessMessage"])
+}

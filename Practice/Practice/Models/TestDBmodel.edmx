@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MyProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MyProject.dbo.Employee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmpId" />
+            <PropertyRef Name="EmpName" />
+            <PropertyRef Name="EmpDept" />
+          </Key>
+          <Property Name="EmpId" Type="int" Nullable="false" />
+          <Property Name="EmpName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="EmpDept" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="salary" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MyProject.dbo.Student_Bio' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Student_Bio">
+          <Key>
+            <PropertyRef Name="stdid" />
+          </Key>
+          <Property Name="stdid" Type="int" Nullable="false" />
+          <Property Name="stdname" Type="varchar" MaxLength="30" />
+          <Property Name="rollno" Type="int" />
+          <Property Name="class" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'MyProject.dbo.Student_Bio_Data' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Student_Bio_Data">
+          <Property Name="stdid" Type="int" />
+          <Property Name="stdname" Type="varchar" MaxLength="30" />
+          <Property Name="rollno" Type="int" />
+          <Property Name="class" Type="varchar" MaxLength="10" />
+        </EntityType>-->
+        <EntityContainer Name="MyProjectModelStoreContainer">
+          <EntitySet Name="Employee" EntityType="Self.Employee" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Employee].[EmpId] AS [EmpId], 
+    [Employee].[EmpName] AS [EmpName], 
+    [Employee].[EmpDept] AS [EmpDept], 
+    [Employee].[salary] AS [salary]
+    FROM [dbo].[Employee] AS [Employee]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Student_Bio" EntityType="Self.Student_Bio" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Student_Bio].[stdid] AS [stdid], 
+    [Student_Bio].[stdname] AS [stdname], 
+    [Student_Bio].[rollno] AS [rollno], 
+    [Student_Bio].[class] AS [class]
+    FROM [dbo].[Student_Bio] AS [Student_Bio]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MyProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmpId" />
+            <PropertyRef Name="EmpName" />
+            <PropertyRef Name="EmpDept" />
+          </Key>
+          <Property Name="EmpId" Type="Int32" Nullable="false" />
+          <Property Name="EmpName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmpDept" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="salary" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Student_Bio">
+          <Key>
+            <PropertyRef Name="stdid" />
+          </Key>
+          <Property Name="stdid" Type="Int32" Nullable="false" />
+          <Property Name="stdname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="rollno" Type="Int32" />
+          <Property Name="class" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="MyProjectEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="Student_Bio" EntityType="Self.Student_Bio" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MyProjectModelStoreContainer" CdmEntityContainer="MyProjectEntities">
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="MyProjectModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+                <ScalarProperty Name="EmpDept" ColumnName="EmpDept" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Student_Bio">
+            <EntityTypeMapping TypeName="MyProjectModel.Student_Bio">
+              <MappingFragment StoreEntitySet="Student_Bio">
+                <ScalarProperty Name="stdid" ColumnName="stdid" />
+                <ScalarProperty Name="stdname" ColumnName="stdname" />
+                <ScalarProperty Name="rollno" ColumnName="rollno" />
+                <ScalarProperty Name="class" ColumnName="class" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

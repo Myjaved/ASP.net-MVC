@@ -1,0 +1,8 @@
+C:\Users\Reliance\Source\Repos\ASP.NET MVC\Lambda_Expression\Lambda_Expression\bin\Debug\Lambda_Expression.exe.config
+C:\Users\Reliance\Source\Repos\ASP.NET MVC\Lambda_Expression\Lambda_Expression\bin\Debug\Lambda_Expression.exe
+C:\Users\Reliance\Source\Repos\ASP.NET MVC\Lambda_Expression\Lambda_Expression\bin\Debug\Lambda_Expression.pdb
+C:\Users\Reliance\Source\Repos\ASP.NET MVC\Lambda_Expression\Lambda_Expression\obj\Debug\Lambda_Expression.csproj.AssemblyReference.cache
+C:\Users\Reliance\Source\Repos\ASP.NET MVC\Lambda_Expression\Lambda_Expression\obj\Debug\Lambda_Expression.csproj.SuggestedBindingRedirects.cache
+C:\Users\Reliance\Source\Repos\ASP.NET MVC\Lambda_Expression\Lambda_Expression\obj\Debug\Lambda_Expression.csproj.CoreCompileInputs.cache
+C:\Users\Reliance\Source\Repos\ASP.NET MVC\Lambda_Expression\Lambda_Expression\obj\Debug\Lambda_Expression.exe
+C:\Users\Reliance\Source\Repos\ASP.NET MVC\Lambda_Expression\Lambda_Expression\obj\Debug\Lambda_Expression.pdb

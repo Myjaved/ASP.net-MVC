@@ -1,0 +1,17 @@
+﻿<form>
+
+    <h3 class="text-center"> LOGIN</h3>
+    <label> USERNAME</label>
+    <input class="form-control" type="text" name="user" />
+    <br />
+    <br />
+    <label> PASSWORD</label>
+    <input class="form-control" type="password" name="pass" />
+    <br />
+    <br />
+    <input class="form-control" type="submit" value="SUBMIT" />
+    <br />
+    <br />
+    @Html.Label("PASSWORD") &nbsp;  @Html.Password("Password", "", new {@class="form-control"})
+
+</form>
